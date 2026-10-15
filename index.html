@@ -5989,6 +5989,235 @@ p.st b.h { display: inline; }
 
         <br />
         <hr />
+	 HOW TO USE  (nothing to build, nothing to download)
+-------------------------------------------------------------------------------
+1. Keep both page files in the SAME folder, named exactly:
+       scp-8134.html          and          timeline-variant-mcd.html
+   (the links are relative, so that is all the wiring there is)
+2. Open scp-8134.html in any text editor, find the line  <div class="footer-wikiwalk-nav">
+   and paste BLOCK 1 directly above it. Save.
+3. Open timeline-variant-mcd.html, find the same line in it, paste BLOCK 2 above it. Save.
+Done - the button, the animation and both directions of the link work.
+
+Notes
+* Paste with a PLAIN text editor (Notepad, VS Code, nano). Do not paste into Word.
+* Ctrl/Cmd-click, middle-click and "open in new tab" skip the animation and just navigate.
+* Anyone who prefers reduced motion gets a short fade instead of the typewriter.
+* If your host strips <script> tags (Wikidot does on live pages), the two links still
+  work normally - only the animation is skipped. Nothing breaks.
+* Already on a page that has the overlay? The script detects it and will not double up.
+-------------------------------------------------------------------------------
+
+<!-- ================================================================================
+     BLOCK 1 of 2  -  the SCP-8134 page
+     Paste this WHOLE block just before this line in that page:
+         <div class="footer-wikiwalk-nav">
+     Nothing else on the page has to change. Works offline: no images, fonts or
+     scripts are loaded from anywhere.
+     ============================================================================= -->
+
+<div class="related-file">
+  <span class="kicker">RELATED DOCUMENTATION &nbsp;&middot;&nbsp; DEPARTMENT OF TEMPORAL AFFAIRS</span>
+  <p><strong>TV-8134/MC&amp;D</strong> &mdash; <em>Timeline Variant: the Liquidation of Marshall, Carter and Dark.</em>
+  Recovered 2021-06-14, private auction, London (Lot&nbsp;112: three ledger volumes, water-damaged, provenance withheld, sold as seen).
+  Records Office 12 of Timeline TV-8134 confirms that SCP-8134 reached our timeline only after the events described in this file.</p>
+  <a class="open-file" href="timeline-variant-mcd.html" data-transition>&#9654;&nbsp;OPEN TV-8134/MC&amp;D (LEVEL 5 / O5 EYES ONLY)</a>
+</div>
+
+<style>
+  /* ---- SCP Foundation transition (self-contained) ---- */
+  .related-file { border: 1px solid #bbb; border-left: 6px solid #7a0c0c; background: #fbf7f7; padding: 12px 16px; margin: 22px 0 0; }
+  .related-file .kicker { font-family: 'Courier New', monospace; font-size: 10.5px; letter-spacing: 2.5px; color: #7a0c0c; font-weight: bold; display: block; margin-bottom: 5px; }
+  .related-file p { margin: 0.35em 0; }
+  .related-file a.open-file { display: inline-block; margin-top: 6px; padding: 7px 14px; background: #7a0c0c; color: #fff !important; text-decoration: none; font-family: 'Courier New', monospace; font-size: 12px; letter-spacing: 1.5px; }
+  .related-file a.open-file:hover { background: #a01212; text-decoration: none; }
+
+  #scp-transition { position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 99999; display: flex; align-items: center; justify-content: center;
+    background: radial-gradient(120% 80% at 50% 0%, rgba(122,12,12,.38), rgba(0,0,0,0) 62%),
+                repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0 1px, rgba(0,0,0,0) 1px 3px), #0b0b0b;
+    opacity: 0; pointer-events: none; transition: opacity .45s ease;
+    font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  #scp-transition.active { opacity: 1; pointer-events: auto; }
+  #scp-transition .scp-trans-inner { width: min(560px, 86vw); text-align: center; }
+  #scp-transition .scp-seal { width: 116px; height: 116px; margin: 0 auto 16px; animation: scp-spin 11s linear infinite; filter: drop-shadow(0 0 16px rgba(170,20,20,.55)); }
+  #scp-transition .scp-seal-svg { width: 100%; height: 100%; display: block; }
+  @keyframes scp-spin { to { transform: rotate(360deg); } }
+  #scp-transition .scp-word { font-family: 'Sans Normalcy', 'Courier New', monospace; font-size: 29px; letter-spacing: 3px; color: #f2f2f2; text-transform: uppercase; text-shadow: 0 2px 12px rgba(0,0,0,.85); }
+  #scp-transition .scp-sub { font-family: 'Courier New', monospace; font-size: 10.5px; letter-spacing: 4px; color: #f0f0c0; margin-top: 7px; }
+  #scp-transition .scp-log { margin: 24px auto 0; text-align: left; max-width: 430px; font-family: 'Courier New', monospace; font-size: 12.5px; line-height: 1.8; color: #9a9a9a; min-height: 108px; }
+  #scp-transition .scp-log .l { opacity: 0; transform: translateY(3px); transition: opacity .18s ease, transform .18s ease; }
+  #scp-transition .scp-log .l.on { opacity: 1; transform: none; }
+  #scp-transition .scp-log .ok { color: #7fd18b; }
+  #scp-transition .scp-log .warn { color: #ff5a5a; }
+  #scp-transition .scp-bar { position: relative; height: 3px; margin: 20px auto 0; max-width: 430px; background: rgba(255,255,255,.12); overflow: hidden; }
+  #scp-transition .scp-bar span { position: absolute; top: 0; bottom: 0; left: 0; right: 100%; background: linear-gradient(90deg, #7a0c0c, #c31616); transition: right .3s linear; }
+  @media (prefers-reduced-motion: reduce) { #scp-transition .scp-seal { animation: none; } }
+</style>
+
+<script>
+  (function () {
+    if (document.getElementById('scp-transition')) { return; }   /* already on the page - never double up */
+    var overlay = document.createElement('div');
+    overlay.id = 'scp-transition';
+    overlay.setAttribute('aria-hidden', 'true');
+    overlay.innerHTML = '<div class="scp-trans-inner"><div class="scp-seal"><svg class="scp-seal-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">          <defs><path id="scpA" d="M50 46 L61 29 L54 29 L54 11 L46 11 L46 29 L39 29 Z"/></defs>          <g fill="#f4f4f4">            <use href="#scpA"/><use href="#scpA" transform="rotate(120 50 50)"/><use href="#scpA" transform="rotate(240 50 50)"/>          </g>          <g fill="none" stroke="#f4f4f4">            <circle cx="50" cy="50" r="43" stroke-width="5"/>            <circle cx="50" cy="50" r="17" stroke-width="4"/>          </g>        </svg></div>' +
+      '<div class="scp-word">SCP Foundation</div><div class="scp-sub">SECURE &middot; CONTAIN &middot; PROTECT</div>' +
+      '<div class="scp-log"></div><div class="scp-bar"><span></span></div></div>';
+    document.body.appendChild(overlay);
+
+    var logEl = overlay.querySelector('.scp-log'), barEl = overlay.querySelector('.scp-bar span');
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var busy = false;
+    var LINES = [
+    ['&gt; ACCESS REQUEST: TV-8134/MC&amp;D', ''],
+    ['&gt; CLEARANCE: LEVEL 5 &#9608;&#9608;&#9608;&#9608; VERIFIED', 'ok'],
+    ['&gt; TIMELINE TV-8134 LINKED', 'ok'],
+    ['&gt; RETRIEVING: 3 LEDGER VOLUMES, LOT 112, LONDON', ''],
+    ['&gt; WARNING: THIS FILE DOES NOT EXIST IN OUR TIMELINE', 'warn'],
+    ['&gt; OPENING FILE &hellip;', '']
+    ];
+
+    overlay.querySelector('.scp-seal-svg') || 0;
+    function reset() { overlay.classList.remove('active'); overlay.setAttribute('aria-hidden', 'true'); logEl.innerHTML = ''; barEl.style.right = '100%'; }
+    function run(href) {
+      if (busy) { return; }
+      busy = true;
+      overlay.classList.add('active');
+      overlay.setAttribute('aria-hidden', 'false');
+      if (reduce) { barEl.style.right = '0%'; window.setTimeout(function () { location.href = href; }, 450); return; }
+      var step = 0;
+      (function next() {
+        if (step < LINES.length) {
+          var d = document.createElement('div');
+          d.className = 'l' + (LINES[step][1] ? ' ' + LINES[step][1] : '');
+          d.innerHTML = LINES[step][0];
+          logEl.appendChild(d);
+          requestAnimationFrame(function () { d.classList.add('on'); });
+          barEl.style.right = Math.max(0, 100 - Math.round((step + 1) * 100 / LINES.length)) + '%';
+          step++;
+          setTimeout(next, 340);
+        } else { setTimeout(function () { location.href = href; }, 700); }
+      })();
+    }
+
+    Array.prototype.forEach.call(document.querySelectorAll('a[data-transition]'), function (a) {
+      a.addEventListener('click', function (e) {
+        if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) { return; }
+        e.preventDefault();
+        run(a.getAttribute('href'));
+      });
+    });
+    window.addEventListener('pageshow', function (e) { if (e.persisted) { reset(); } });
+  })();
+</script>
+
+<!-- ============================== end of BLOCK 1 ============================== -->
+
+<!-- ================================================================================
+     BLOCK 2 of 2  -  the TV-8134/MC&D page
+     Paste this WHOLE block just before this line in that page:
+         <div class="footer-wikiwalk-nav">
+     Nothing else on the page has to change. Works offline: no images, fonts or
+     scripts are loaded from anywhere.
+     ============================================================================= -->
+
+<div class="related-file">
+  <span class="kicker">PRIMARY FILE &nbsp;&middot;&nbsp; SITE-&Omega; RECORDS OFFICE</span>
+  <p><strong>SCP-8134</strong> &mdash; <em>&ldquo;APEX&rdquo;.</em> The originating file. Personnel are reminded
+  that this variant was liquidated <em>before</em> the subject reached our timeline, and that the resident of
+  Room 8134 has read both documents.</p>
+  <a class="open-file" href="scp-8134.html" data-transition>&#9654;&nbsp;RETURN TO SCP-8134 (LEVEL 5 / O5 EYES ONLY)</a>
+</div>
+
+<style>
+  /* ---- SCP Foundation transition (self-contained) ---- */
+  .related-file { border: 1px solid #bbb; border-left: 6px solid #7a0c0c; background: #fbf7f7; padding: 12px 16px; margin: 22px 0 0; }
+  .related-file .kicker { font-family: 'Courier New', monospace; font-size: 10.5px; letter-spacing: 2.5px; color: #7a0c0c; font-weight: bold; display: block; margin-bottom: 5px; }
+  .related-file p { margin: 0.35em 0; }
+  .related-file a.open-file { display: inline-block; margin-top: 6px; padding: 7px 14px; background: #7a0c0c; color: #fff !important; text-decoration: none; font-family: 'Courier New', monospace; font-size: 12px; letter-spacing: 1.5px; }
+  .related-file a.open-file:hover { background: #a01212; text-decoration: none; }
+
+  #scp-transition { position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 99999; display: flex; align-items: center; justify-content: center;
+    background: radial-gradient(120% 80% at 50% 0%, rgba(122,12,12,.38), rgba(0,0,0,0) 62%),
+                repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0 1px, rgba(0,0,0,0) 1px 3px), #0b0b0b;
+    opacity: 0; pointer-events: none; transition: opacity .45s ease;
+    font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  #scp-transition.active { opacity: 1; pointer-events: auto; }
+  #scp-transition .scp-trans-inner { width: min(560px, 86vw); text-align: center; }
+  #scp-transition .scp-seal { width: 116px; height: 116px; margin: 0 auto 16px; animation: scp-spin 11s linear infinite; filter: drop-shadow(0 0 16px rgba(170,20,20,.55)); }
+  #scp-transition .scp-seal-svg { width: 100%; height: 100%; display: block; }
+  @keyframes scp-spin { to { transform: rotate(360deg); } }
+  #scp-transition .scp-word { font-family: 'Sans Normalcy', 'Courier New', monospace; font-size: 29px; letter-spacing: 3px; color: #f2f2f2; text-transform: uppercase; text-shadow: 0 2px 12px rgba(0,0,0,.85); }
+  #scp-transition .scp-sub { font-family: 'Courier New', monospace; font-size: 10.5px; letter-spacing: 4px; color: #f0f0c0; margin-top: 7px; }
+  #scp-transition .scp-log { margin: 24px auto 0; text-align: left; max-width: 430px; font-family: 'Courier New', monospace; font-size: 12.5px; line-height: 1.8; color: #9a9a9a; min-height: 108px; }
+  #scp-transition .scp-log .l { opacity: 0; transform: translateY(3px); transition: opacity .18s ease, transform .18s ease; }
+  #scp-transition .scp-log .l.on { opacity: 1; transform: none; }
+  #scp-transition .scp-log .ok { color: #7fd18b; }
+  #scp-transition .scp-log .warn { color: #ff5a5a; }
+  #scp-transition .scp-bar { position: relative; height: 3px; margin: 20px auto 0; max-width: 430px; background: rgba(255,255,255,.12); overflow: hidden; }
+  #scp-transition .scp-bar span { position: absolute; top: 0; bottom: 0; left: 0; right: 100%; background: linear-gradient(90deg, #7a0c0c, #c31616); transition: right .3s linear; }
+  @media (prefers-reduced-motion: reduce) { #scp-transition .scp-seal { animation: none; } }
+</style>
+
+<script>
+  (function () {
+    if (document.getElementById('scp-transition')) { return; }   /* already on the page - never double up */
+    var overlay = document.createElement('div');
+    overlay.id = 'scp-transition';
+    overlay.setAttribute('aria-hidden', 'true');
+    overlay.innerHTML = '<div class="scp-trans-inner"><div class="scp-seal"><svg class="scp-seal-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">          <defs><path id="scpA" d="M50 46 L61 29 L54 29 L54 11 L46 11 L46 29 L39 29 Z"/></defs>          <g fill="#f4f4f4">            <use href="#scpA"/><use href="#scpA" transform="rotate(120 50 50)"/><use href="#scpA" transform="rotate(240 50 50)"/>          </g>          <g fill="none" stroke="#f4f4f4">            <circle cx="50" cy="50" r="43" stroke-width="5"/>            <circle cx="50" cy="50" r="17" stroke-width="4"/>          </g>        </svg></div>' +
+      '<div class="scp-word">SCP Foundation</div><div class="scp-sub">SECURE &middot; CONTAIN &middot; PROTECT</div>' +
+      '<div class="scp-log"></div><div class="scp-bar"><span></span></div></div>';
+    document.body.appendChild(overlay);
+
+    var logEl = overlay.querySelector('.scp-log'), barEl = overlay.querySelector('.scp-bar span');
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var busy = false;
+    var LINES = [
+    ['&gt; INITIATING RETURN', ''],
+    ['&gt; CLEARANCE: LEVEL 5 &#9608;&#9608;&#9608;&#9608; VERIFIED', 'ok'],
+    ['&gt; SITE-&Omega; RECORDS OFFICE CONNECTED', 'ok'],
+    ['&gt; NOTE: THE ORIGINAL FILE IS OLDER THAN THIS ONE', ''],
+    ['&gt; WARNING: HE HAS READ BOTH', 'warn'],
+    ['&gt; OPENING FILE &hellip;', '']
+    ];
+
+    overlay.querySelector('.scp-seal-svg') || 0;
+    function reset() { overlay.classList.remove('active'); overlay.setAttribute('aria-hidden', 'true'); logEl.innerHTML = ''; barEl.style.right = '100%'; }
+    function run(href) {
+      if (busy) { return; }
+      busy = true;
+      overlay.classList.add('active');
+      overlay.setAttribute('aria-hidden', 'false');
+      if (reduce) { barEl.style.right = '0%'; window.setTimeout(function () { location.href = href; }, 450); return; }
+      var step = 0;
+      (function next() {
+        if (step < LINES.length) {
+          var d = document.createElement('div');
+          d.className = 'l' + (LINES[step][1] ? ' ' + LINES[step][1] : '');
+          d.innerHTML = LINES[step][0];
+          logEl.appendChild(d);
+          requestAnimationFrame(function () { d.classList.add('on'); });
+          barEl.style.right = Math.max(0, 100 - Math.round((step + 1) * 100 / LINES.length)) + '%';
+          step++;
+          setTimeout(next, 340);
+        } else { setTimeout(function () { location.href = href; }, 700); }
+      })();
+    }
+
+    Array.prototype.forEach.call(document.querySelectorAll('a[data-transition]'), function (a) {
+      a.addEventListener('click', function (e) {
+        if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) { return; }
+        e.preventDefault();
+        run(a.getAttribute('href'));
+      });
+    });
+    window.addEventListener('pageshow', function (e) { if (e.persisted) { reset(); } });
+  })();
+</script>
+
+<!-- ============================== end of BLOCK 2 ============================== -->
+
         <div class="footer-wikiwalk-nav">
           <div style="text-align: center;">
             <p>&#171; <a href="https://scp-wiki.wikidot.com/scp-8133">SCP-8133</a> | <strong>APEX</strong> | <a href="https://scp-wiki.wikidot.com/scp-8135">SCP-8135</a> &#187;</p>
